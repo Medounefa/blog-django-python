@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+ <div class="container">
+     <div class="card card-body mt-5 shadow">
+         <h3 class="text-center mb-4 text-decoration-underline fst-italic">Contactez-moi</h3>
+        <div class="row ">
+            <div class="col-lg-6 col-md-8 col-ms-12">
+                <h3 class="text-decoration-underline text-info">Medoune Fall</h3> <br />
+                <h6>Je suis aussi disponible sur les reseaux sociaux</h6> <br />
+                <p>Adresse : <b>Grand Medine</b></p>
+                <p>Telephone : <b>77 794 59 88</b></p>
+                <p>Email : <b>medoune99.fall@gmail.com</b></p>
+            </div>
+            <div class="col-lg-6 col-md-8 col-ms-12">
+                <h3 class="text-decoration-underline text-info">Vous pouvez m'envoyer un message</h3> <br />
+                <form>
+                    <div class="form-group">
+                        <input type="text"  class="form-control" placeholder="Votre nom"/>
+                    </div><br />
+                    <div class="form-group">
+                        <input type="text"  class="form-control" placeholder="Votre prenom"/>
+                    </div><br />
+                    <div class="form-group">
+                        <input type="text"  class="form-control" placeholder="Objet"/>
+                    </div><br />
+                    <div class="form-group">
+                        <textarea row="5" col="13" class="form-control" placeholder="Message"></textarea>
+                    </div></br />
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                <form>
+            </div>
+        </div>
+     </div>
+ </div>
+{% endblock  %}
