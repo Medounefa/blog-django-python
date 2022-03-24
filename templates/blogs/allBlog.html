@@ -1,0 +1,58 @@
+<style>
+    img{
+        width:253px;
+        height:200px;
+    }
+    
+</style>
+{% extends 'base.html' %} 
+{% block contenu  %}
+
+ <div class="container mt-5">
+     <div class="row">
+         <div class="col-lg-10 col-md-6 col-sm-12">
+            <h1 class="text-start fs-2 mb-4 text-decoration-underline">Blog</h1>
+         </div>
+         <div class="col-lg-2 col-md-6 col-sm-12">
+             {% if request.user.username == "admin2" %}
+            <a href="{% url 'newblog' %}" class="btn btn-info me-0 mb-4">Ajouter un article</a>
+            {% else%}
+            {% endif%}
+         </div>
+     </div>
+    <div class="row">
+        {% if listeBlog %}
+        {% for  article in listeBlog  %}
+
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-3 rounded">
+            <a href="{% url 'detailsblog'  article.id%}" class="text-decoration-none text-dark">
+            <div class="card shadow  mx-0 ">
+                <div class="card-img-top">
+                    {% if article.miniature %}
+                    <img src="{{article.miniature.url}}"  /><br/>
+                     {% else %}
+                     <img src="" />
+                     {% endif%}
+                </div>
+               <div class="card-body ">
+            
+                <i><b>{{article.titre}}</b></i> <br /> <i>{{article.resume}}</i> <br /> <br /> 
+                <small class="fs-0 ">Publie par <b>{{article.auteur}}</b> Le {{article.dateCreation}}</small>
+            </a>
+               </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+        
+        {% endif %}
+    </div>
+   
+ </div>
+
+{% endblock  %}
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% block contenu%} 
+<form method="POST"> {%csrf_token%}
+    <div class="mb-3 mt-3 form-group">
+      <label class="form-label">Titre</label>
+      <input type="text" class="form-control" name="titre" value={{article.titre}} required="">
+    </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">Resume</label>
+        <textarea row="5" col="15" class="form-control" name="resume" value={{article.resume}} required=""></textarea>
+    </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">Miniature</label>
+        <input type="file" class="form-control" name="miniature" value={{article.miniature}} required="">
+    </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">Contenu</label>
+        <textarea row="5" col="15" class="form-control" name="contenu" value={{article.contenu}} required=""></textarea>
+    </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">Date de modification</label>
+        <input type="date" class="form-control" name="dateModification" value={{article.dateModification}} required="">
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+{% endblock%}
+

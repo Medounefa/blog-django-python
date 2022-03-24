@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% comment %}  {% endcomment %}
+{% block contenu %}
+  <div class="row mt-2">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <form method="POST">
+                {%csrf_token%}
+                <div class="alert alert-danger" role="alert">
+                  Etes-vous sur de Supprimer {{ blog.titre }}
+                  </div>
+                  <button type="submit" class="btn btn-danger">Oui</button>
+                  <a href="{% url 'allblog' %}" class="btn btn-info">Non</a>
+            </form>
+        </div>
+      </div>
+  </div>
+{% endblock%}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% comment %}  {% endcomment %}
+{% block contenu %}
+  <div class="row">
+
+    <div class="col-md-6 m-auto">
+        <div class="card card-body mt-4 p-3">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    User : {{user.username}}
+                </li>
+                <li class="list-group-item">
+                   Email: {{user.email}}
+                </li>
+                
+            </ul>
+            {% comment %} <div class="mt-2">
+                <a href="{% url 'editblog' article.id%}" class="btn btn-primary">Modifier</a>
+                <a href="{% url 'deleteblog' article.id%}" class="btn btn-danger">Supprimer</a>
+            </div> {% endcomment %}
+        </div>
+    </div>
+      
+      {% comment %} <p>{{contacts}}</p> {% endcomment %}
+  </div>
+{% endblock  %}}
